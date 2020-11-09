@@ -1,0 +1,32 @@
+<script src="jquery-3.3.1.js">
+</script>
+<style>
+#fixedmenu {
+	position:fixed;
+	top:200px;
+	left:-270px;
+	width:300px;
+	background:#FFC;
+	padding:10px 0 10px 10px;
+	border:#000 1px solid;
+}
+#fopen {float:right; width:40px; color:#039; cursor:pointer; }
+#fclose {float:right; width:40px; color:#039; cursor:pointer; display:none; }
+</style>
+<div id="fixedmenu">
+<div id="fopen">open</div>
+<div id="fclose">close</div>
+Выезжающее меню на jQuery
+</div>
+<script type="text/javascript">
+$('#fopen').click(function(){
+	$('#fixedmenu').animate({'left':'170px'}, 1500);	
+	$('#fopen').hide(2000);
+	$('#fclose').show(2000);
+});
+$('#fclose').click(function(){
+	$('#fixedmenu').animate({'left':'-270px'}, 1500);	
+	$('#fopen').show(2000);
+	$('#fclose').hide(2000);
+});
+</script>

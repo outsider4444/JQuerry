@@ -1,0 +1,43 @@
+
+<html>                                                                  
+<head>                                                                
+<script src="jquery-3.3.1.js">
+</script>
+<style type="text/css">
+	#op { width:200px; cursor:pointer; }
+	#con{ width:200px; cursor:pointer; display:none; }
+	#cl { width:200px; cursor:pointer; display:none; }
+	#par1 {left:-500px;position:fixed;}
+</style>
+<script type="text/javascript"> 
+$(document).ready(function(){
+ $('#op').click(function(){
+ 	$('#par1').css('top','50px').css('width','350px').css('fontSize','12pt');
+	$('#par1').animate({'left':'100px'}, 1500);	
+	$('#op').hide(2000);
+	$('#con').show(2000);
+});
+ $('#con').click(function(){
+ 	$('#par1').animate({fontSize:'24pt'},1000).animate({'left':'200px','top':'100px'},1000).animate({'left':'500px', 'top':'100px'},1000).animate({'left':'400px','top':'300px'},1000).animate({'width':'10px'},2000)
+	$('#cl').show(2000);
+	$('#con').hide(2000);
+ })
+
+ $('#cl').click(function(){
+	$('#par1').animate({'left':'-500px'}, 1500);	
+	$('#op').show(2000);
+	$('#cl').hide(2000);
+});  
+
+});
+</script> 
+</head>
+<body>
+<input id="op", type="button", value="Начать анимацию" />
+<input id="con", type="button", value="Продолжить анимацию" />
+<input id="cl", type="button", value="Закончить анимацию" />
+<div id="par1">
+<p>Это абзац, к которому будет применена анимация.</p>
+</div>
+</body>
+</html>

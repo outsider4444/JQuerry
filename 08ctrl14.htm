@@ -1,0 +1,21 @@
+<script src="jquery-3.3.1.js">
+</script>
+<p><h1>Пример таймера</h1></p>
+<p id="timer">Ссылка для скачивания файла появится через <b class="timer"></b> сек.</p>
+<script type="text/javascript"> 
+var next = 15; 
+function timerStart(){
+	$('.timer').html(next);		
+	if(next <= 0){
+		$('#timer').fadeIn(1000, function(){
+			$('#timer').html('<a>Ссылка для скачивания файла</a>');		
+			end();
+		});
+	}
+	next = next - 1; 	
+}
+
+$(function(){
+	setInterval("timerStart()",1000 );
+});
+</script>
